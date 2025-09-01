@@ -40,7 +40,10 @@
       class="dropdown-content z-[1] p-2 shadow-2xl bg-base-100 rounded-box max-h-64 overflow-y-auto"
       :style="{ width: dropdownWidth + 'px' }"
     >
-      <li v-for="theme in availableThemes" :key="theme">
+      <li
+        v-for="theme in availableThemes"
+        :key="theme"
+      >
         <button
           class="flex items-center gap-3 px-4 py-2 hover:bg-base-300 rounded-lg transition-colors w-full text-left"
           :class="{ 'bg-primary text-primary-content': currentTheme === theme }"
@@ -49,7 +52,7 @@
           <div
             class="w-4 h-4 rounded-full border-2 border-base-content"
             :style="{ backgroundColor: getThemePreviewColor(theme) }"
-          ></div>
+          />
           <span class="capitalize">{{ theme }}</span>
           <svg
             v-if="currentTheme === theme"
@@ -74,7 +77,7 @@
 <script setup lang="ts">
 import { computed, ref, onMounted } from 'vue'
 
-const availableThemes = [
+const availableThemes: string[] = [
   'light',
   'dark',
   'cupcake',
@@ -103,24 +106,24 @@ const availableThemes = [
   'lemonade',
   'night',
   'coffee',
-  'winter'
+  'winter',
 ]
 
-const themeCookie = useCookie('theme', {
+const themeCookie = useCookie<string>('theme', {
   default: () => 'dark',
-  watch: true
+  watch: true,
 })
 
-const currentTheme = computed(() => themeCookie.value)
-const dropdownWidth = ref(200) // Default width
+const currentTheme = computed<string>(() => themeCookie.value)
+const dropdownWidth = ref<number>(200) // Default width
 
-const setTheme = (theme: string) => {
+const setTheme = (theme: string): void => {
   themeCookie.value = theme
 }
 
 function getThemePreviewColor(theme: string): string {
   // Simple color mapping for theme previews
-  const colorMap = {
+  const colorMap: Record<string, string> = {
     light: '#ffffff',
     dark: '#1f2937',
     cupcake: '#faf7f5',
@@ -149,7 +152,7 @@ function getThemePreviewColor(theme: string): string {
     lemonade: '#fefce8',
     night: '#0f172a',
     coffee: '#362d1d',
-    winter: '#f0f9ff'
+    winter: '#f0f9ff',
   }
   return colorMap[theme] || '#ffffff'
 }
@@ -161,7 +164,7 @@ onMounted(() => {
   if (context) {
     context.font = '16px system-ui, -apple-system, sans-serif'
     const longestTheme = availableThemes.reduce((longest, current) =>
-      context.measureText(current).width > context.measureText(longest).width ? current : longest
+      context.measureText(current).width > context.measureText(longest).width ? current : longest,
     )
     const textWidth = context.measureText(longestTheme).width
     // Add padding for icon, spacing, and checkmark

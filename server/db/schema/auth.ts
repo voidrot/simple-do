@@ -13,7 +13,7 @@ export const user = sqliteTable('user', {
     .notNull(),
   updatedAt: integer('updated_at', { mode: 'timestamp' })
     .$defaultFn(() => /* @__PURE__ */ new Date())
-    .notNull()
+    .notNull(),
 })
 
 export const session = sqliteTable('session', {
@@ -26,7 +26,7 @@ export const session = sqliteTable('session', {
   userAgent: text('user_agent'),
   userId: text('user_id')
     .notNull()
-    .references(() => user.id, { onDelete: 'cascade' })
+    .references(() => user.id, { onDelete: 'cascade' }),
 })
 
 export const account = sqliteTable('account', {
@@ -40,15 +40,15 @@ export const account = sqliteTable('account', {
   refreshToken: text('refresh_token'),
   idToken: text('id_token'),
   accessTokenExpiresAt: integer('access_token_expires_at', {
-    mode: 'timestamp'
+    mode: 'timestamp',
   }),
   refreshTokenExpiresAt: integer('refresh_token_expires_at', {
-    mode: 'timestamp'
+    mode: 'timestamp',
   }),
   scope: text('scope'),
   password: text('password'),
   createdAt: integer('created_at', { mode: 'timestamp' }).notNull(),
-  updatedAt: integer('updated_at', { mode: 'timestamp' }).notNull()
+  updatedAt: integer('updated_at', { mode: 'timestamp' }).notNull(),
 })
 
 export const verification = sqliteTable('verification', {
@@ -57,9 +57,9 @@ export const verification = sqliteTable('verification', {
   value: text('value').notNull(),
   expiresAt: integer('expires_at', { mode: 'timestamp' }).notNull(),
   createdAt: integer('created_at', { mode: 'timestamp' }).$defaultFn(
-    () => /* @__PURE__ */ new Date()
+    () => /* @__PURE__ */ new Date(),
   ),
   updatedAt: integer('updated_at', { mode: 'timestamp' }).$defaultFn(
-    () => /* @__PURE__ */ new Date()
-  )
+    () => /* @__PURE__ */ new Date(),
+  ),
 })

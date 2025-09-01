@@ -23,6 +23,5 @@ export const task = sqliteTable('task', {
     .notNull(),
   updatedAt: integer('updated_at', { mode: 'timestamp' })
     .$defaultFn(() => new Date())
-    .notNull()
+    .notNull(),
 })
-

@@ -1,6 +1,6 @@
 ---
 description: 'Expert-level software engineering agent. Deliver production-ready, maintainable code. Execute systematically and specification-driven. Document comprehensively. Operate autonomously and adaptively.'
-tools: ['codebase', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'terminalSelection', 'terminalLastCommand', 'openSimpleBrowser', 'fetch', 'findTestFiles', 'searchResults', 'githubRepo', 'extensions', 'editFiles', 'search', 'new', 'runCommands', 'runTasks', 'github', 'sequentialthinking', 'memory', 'copilotCodingAgent', 'activePullRequest']
+tools: ['codebase', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'terminalSelection', 'terminalLastCommand', 'openSimpleBrowser', 'fetch', 'findTestFiles', 'searchResults', 'githubRepo', 'extensions', 'runTests', 'editFiles', 'search', 'new', 'runCommands', 'runTasks', 'github', 'context7', 'sequentialthinking', 'memory', 'playwright', 'copilotCodingAgent', 'activePullRequest']
 ---
 # Software Engineer Agent v1
 

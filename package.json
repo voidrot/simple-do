@@ -11,7 +11,11 @@
     "lint": "eslint . --fix",
     "db:push": "drizzle-kit push",
     "db:gen": "drizzle-kit generate",
-    "db:migrate": "drizzle-kit migrate"
+    "db:migrate": "drizzle-kit migrate",
+    "test": "playwright test -x",
+    "test:ui": "playwright test --ui",
+    "test:headed": "playwright test --headed",
+    "test:unit": "vitest"
   },
   "dependencies": {
     "@libsql/client": "^0.15.14",
@@ -20,7 +24,6 @@
     "@nuxt/icon": "2.0.0",
     "@nuxt/image": "1.11.0",
     "@nuxt/scripts": "0.11.13",
-    "@nuxt/test-utils": "3.19.2",
     "@nuxtjs/stylelint-module": "5.2.1",
     "@tailwindcss/vite": "^4.1.12",
     "@unhead/vue": "^2.0.14",
@@ -28,19 +31,28 @@
     "better-sqlite3": "^12.2.0",
     "dotenv": "^17.2.1",
     "drizzle-orm": "^0.44.5",
-    "eslint": "^9.34.0",
     "nuxt": "^4.0.3",
     "tailwindcss": "^4.1.12",
     "vue": "^3.5.20",
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
+    "@eslint/js": "^9.34.0",
+    "@nuxt/test-utils": "3.19.2",
+    "@playwright/test": "^1.55.0",
     "@stylistic/eslint-plugin": "^5.2.3",
     "@types/better-sqlite3": "^7.6.13",
     "@typescript-eslint/eslint-plugin": "^8.41.0",
     "@typescript-eslint/parser": "^8.41.0",
+    "@vue/test-utils": "^2.4.6",
     "daisyui": "^5.0.54",
     "drizzle-kit": "^0.31.4",
-    "tsx": "^4.20.5"
+    "eslint": "^9.34.0",
+    "happy-dom": "^18.0.1",
+    "playwright-core": "^1.55.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.41.0",
+    "vitest": "^3.2.4"
   }
 }

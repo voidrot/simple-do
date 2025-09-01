@@ -24,3 +24,6 @@ logs
 !.env.example
 
 *.db
+playwright-report
+playwright
+test-results
