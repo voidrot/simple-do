@@ -1,6 +1,9 @@
 <template>
   <div class="card w-full max-w-md shadow-xl bg-base-100">
     <div class="card-body">
+      <div class="flex justify-end mb-4">
+        <ThemeToggle />
+      </div>
       <h2 class="card-title justify-center text-2xl font-bold">
         {{ isLogin ? 'Login' : 'Register' }}
       </h2>
